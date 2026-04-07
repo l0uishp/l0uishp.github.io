@@ -1,91 +1,492 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Ingénieur Cybersécurité</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body>
 
-  <!-- Header -->
-  <header class="p-6 flex justify-between items-center border-b border-gray-700">
-    <h1 class="text-xl font-bold">Ton Nom</h1>
-    <nav class="space-x-6">
-      <a href="#about" class="hover:text-blue-400">À propos</a>
-      <a href="#projects" class="hover:text-blue-400">Projets</a>
-      <a href="#skills" class="hover:text-blue-400">Compétences</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
-    </nav>
-  </header>
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
 
-  <!-- Hero -->
-  <section class="text-center py-20">
-    <h2 class="text-4xl font-bold mb-4">Ingénieur en cybersécurité</h2>
-    <p class="text-gray-400 max-w-xl mx-auto">
-      Jeune diplômé en sciences du numérique, spécialisé en cybersécurité. Passionné par la sécurité offensive, l'analyse de vulnérabilités et la protection des systèmes.
-    </p>
+  <!-- HEX CANVAS BG -->
+  <canvas id="hex-bg"></canvas>
+
+  <!-- PARTICLES -->
+  <div id="particles"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">&lt;Louis HOUYAU PEDASCOLL/&gt;</div>
+    <ul>
+      <li><a href="#home"       data-section="home">      <span>01.</span> Home</a></li>
+      <li><a href="#formation"  data-section="formation"> <span>02.</span> Education</a></li>
+      <li><a href="#experience" data-section="experience"><span>03.</span> Experience</a></li>
+      <li><a href="#skills"     data-section="skills">    <span>04.</span> Skills</a></li>
+      <li><a href="#projects"   data-section="projects">  <span>05.</span> Projects</a></li>
+      <li><a href="#contact"    data-section="contact">   <span>06.</span> Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="section hero">
+    <div class="hero-content">
+      <p class="hero-tag">&gt; initializing_portfolio.sh</p>
+      <h1 class="glow">Louis<br><span>HOUYAU PEDASCOLL</span></h1>
+      <h2 class="hero-subtitle">
+        <span class="typed-text"></span><span class="cursor-blink">_</span>
+      </h2>
+      <p class="hero-desc">
+        Digital engineering student specializing in cybersecurity.<br>
+      </p>
+      <div class="hero-actions">
+        <a href="cv/cv.pdf" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i class="fas fa-terminal"></i> Get in touch
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-16 px-6 max-w-4xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6">À propos</h3>
-    <p class="text-gray-400">
-      Diplômé récent avec une formation solide en informatique et en sécurité des systèmes. Expérience en tests d'intrusion, cryptographie et sécurisation d'applications web.
-    </p>
+ <!-- EDUCATION -->
+<section id="formation" class="section fade-in-section">
+  <h2 class="section-title"><span class="title-num">02.</span> Education</h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Engineering School — Digital Sciences &amp; Cybersecurity</h3>
+          <div class="timeline-badges">
+            <span class="badge">2021 – 2025</span>
+            <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Toulouse</span>
+          </div>
+        </div>
+        <p class="timeline-company"><i class="fas fa-university"></i> ENSEEIHT</p>
+        <ul class="timeline-bullets">
+          <li>M1 — Systems &amp; Network Architecture</li>
+          <li>M2 — Infrastructures for Big Data &amp; IoT</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Bridging Programme — Toulouse Tech</h3>
+          <div class="timeline-badges">
+            <span class="badge">2020 – 2021</span>
+            <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Toulouse</span>
+          </div>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Transition year from medicine to digital engineering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>DFASM3 — Medical Studies</h3>
+          <div class="timeline-badges">
+            <span class="badge">2014 – 2020</span>
+            <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Toulouse</span>
+          </div>
+        </div>
+        <p class="timeline-company"><i class="fas fa-hospital"></i> École de Médecine de Toulouse</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>Baccalauréat Scientifique</h3>
+          <div class="timeline-badges">
+            <span class="badge">2014</span>
+            <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Albi</span>
+          </div>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Mention Très Bien</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section fade-in-section">
+    <h2 class="section-title"><span class="title-num">03.</span> Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-content">
+    <div class="timeline-header">
+      <h3>End-of-Studies Internship — Cybersecurity Architect</h3>
+      <div class="timeline-badges">
+        <span class="badge">Jun – Dec 2025 · 6 months</span>
+        <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Toulouse</span>
+      </div>
+    </div>
+    <p class="timeline-company"><i class="fas fa-building"></i> CNES — Centre des Opérations du Réseau (COR)</p>
+    <ul class="timeline-bullets">
+      <li>GRC analysis of the regulatory framework (NIS2, LPM cybersecurity provisions) applied to the SIIV perimeter in a space context</li>
+      <li>Compliance study on an extended non-SIIV perimeter, focusing on asset mapping and security event logging/correlation requirements</li>
+      <li>Developed an Ansible playbook to automate data collection and structuring for perimeter mapping, deployed via Ansible Tower on the dev network</li>
+      <li>Designed and deployed a centralized SIEM architecture based on the ELK stack, integrating a PKI for secure communications</li>
+      <li>Built initial SOC use cases — detection and correlation rules to identify suspicious behaviours</li>
+      <li>Collaborated with operational and administrative teams for dev network resource usage</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">GRC</span>
+      <span class="tag">NIS2</span>
+      <span class="tag">LPM</span>
+      <span class="tag">SIEM</span>
+      <span class="tag">ELK</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">SOC</span>
+      <span class="tag">PKI</span>
+    </div>
+  </div>
+</div>
+
+      <div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-content">
+    <div class="timeline-header">
+      <h3>M1 Internship — Machine Learning &amp; Security</h3>
+      <div class="timeline-badges">
+        <span class="badge">2024 · 3 months</span>
+        <span class="badge badge-location"><i class="fas fa-map-marker-alt"></i> Paris</span>
+      </div>
+    </div>
+    <ul class="timeline-bullets">
+      <li>Designed and trained ML models (MLP, CNN) for network slicing classification using labelled 5G environment datasets</li>
+      <li>Comparative analysis of centralized vs. federated learning approaches across data distributions and model architectures</li>
+      <li>Tools: Google Colab, Jupyter, Python, TensorFlow Federated, scikit-learn, pandas</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">TensorFlow Federated</span>
+      <span class="tag">CNN</span>
+      <span class="tag">MLP</span>
+      <span class="tag">Federated Learning</span>
+      <span class="tag">scikit-learn</span>
+    </div>
+  </div>
+</div>
+
+    </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-16 px-6 bg-gray-800">
-    <h3 class="text-2xl font-semibold mb-10 text-center">Projets</h3>
-    <div class="grid md:grid-cols-3 gap-8">
+  <!-- SKILLS -->
+  <section id="skills" class="section fade-in-section">
+    <h2 class="section-title"><span class="title-num">04.</span> Skills</h2>
 
-      <div class="bg-gray-900 p-6 rounded-2xl shadow">
-        <h4 class="text-xl font-bold mb-2">Audit de sécurité web</h4>
-        <p class="text-gray-400">Analyse de vulnérabilités OWASP sur une application web.</p>
+        <!-- TECHNICAL -->
+    <div class="skills-category">
+      <h3 class="skills-cat-title"><i class="fas fa-microchip"></i> Technical Skills</h3>
+ 
+      <!-- Languages & Scripting -->
+      <p class="skills-subcat-title"><i class="fas fa-code"></i> Languages &amp; Scripting</p>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <i class="fab fa-python"></i>
+          <p>Python</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fab fa-java"></i>
+          <p>Java</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-copyright"></i>
+          <p>C</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-terminal"></i>
+          <p>Bash</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+      </div>
+ 
+      <!-- Systems & Infrastructure -->
+      <p class="skills-subcat-title"><i class="fas fa-server"></i> Systems &amp; Infrastructure</p>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <i class="fab fa-linux"></i>
+          <p>Linux</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fab fa-windows"></i>
+          <p>Windows</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-robot"></i>
+          <p>Ansible</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fab fa-git-alt"></i>
+          <p>Git</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="78"></div></div>
+        </div>
+      </div>
+ 
+      <!-- Security Tools -->
+      <p class="skills-subcat-title"><i class="fas fa-shield-alt"></i> Security Tools</p>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <i class="fas fa-network-wired"></i>
+          <p>Wireshark</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="80"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-bug"></i>
+          <p>Burp Suite</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-chart-bar"></i>
+          <p>ELK Stack</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-search"></i>
+          <p>Nmap</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+      </div>
+ 
+      <!-- Standards & Compliance -->
+      <p class="skills-subcat-title"><i class="fas fa-file-contract"></i> Standards &amp; Compliance</p>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <i class="fas fa-crosshairs"></i>
+          <p>MITRE ATT&amp;CK</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-list-ol"></i>
+          <p>OWASP Top 10</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-landmark"></i>
+          <p>NIS2</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="70"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-gavel"></i>
+          <p>LPM</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-certificate"></i>
+          <p>ISO 27001</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-book-open"></i>
+          <p>NIST</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="68"></div></div>
+        </div>
+      </div>
+ 
+      <!-- Intelligence -->
+      <p class="skills-subcat-title"><i class="fas fa-search"></i> Intelligence</p>
+      <div class="skills-grid">
+        <div class="card skill-card">
+          <i class="fas fa-user-secret"></i>
+          <p>OSINT</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="75"></div></div>
+        </div>
+        <div class="card skill-card">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>GeoINT</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="60"></div></div>
+        </div>
+      </div>
+ 
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="skills-category">
+      <h3 class="skills-cat-title"><i class="fas fa-globe"></i> Languages</h3>
+      <div class="skills-grid skills-grid--lang">
+
+        <div class="card skill-card">
+          <span class="lang-flag">🇫🇷</span>
+          <p>French</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="100"></div></div>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="card skill-card">
+          <span class="lang-flag">🇬🇧</span>
+          <p>English</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="85"></div></div>
+          <span class="lang-level">C1</span>
+        </div>
+        <div class="card skill-card">
+          <span class="lang-flag">🇪🇸</span>
+          <p>Spanish</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="65"></div></div>
+          <span class="lang-level">B1</span>
+        </div>
+        <div class="card skill-card">
+          <span class="lang-flag">🇷🇺</span>
+          <p>Russian</p>
+          <div class="skill-bar"><div class="skill-fill" data-level="10"></div></div>
+          <span class="lang-level">A1</span>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section fade-in-section">
+    <h2 class="section-title"><span class="title-num">05.</span> Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 : ML Internship -->
+      <div class="card project-card">
+        <div class="project-header">
+          <i class="fas fa-brain project-icon"></i>
+          <div class="project-links">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="View"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>Federated Learning for Phishing Detection</h3>
+        <p>M1 internship project — benchmarked MLP &amp; CNN on MNIST, then designed a federated learning model to classify email headers as phishing or legitimate. Compared centralized vs. federated learning under IID and non-IID data distributions.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Federated Learning</span>
+          <span class="tag">CNN</span>
+          <span class="tag">NLP</span>
+        </div>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-2xl shadow">
-        <h4 class="text-xl font-bold mb-2">CTF / Challenges</h4>
-        <p class="text-gray-400">Participation à des compétitions de cybersécurité.</p>
+      <!-- Project 2 : OSINT mail checker -->
+      <div class="card project-card">
+        <div class="project-header">
+          <i class="fas fa-user-secret project-icon"></i>
+          <div class="project-links">
+            <a href="https://github.com/l0uishp/digtool" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/l0uishp/digtool" title="View"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>DigTool - Email OSINT Checker</h3>
+        <p>Tool that verifies whether an email address is registered across multiple online platforms.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">OSINT</span>
+          <span class="tag">API</span>
+          <span class="tag">Reconnaissance</span>
+        </div>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-2xl shadow">
-        <h4 class="text-xl font-bold mb-2">Outil de scan réseau</h4>
-        <p class="text-gray-400">Développement d'un scanner de ports en Python.</p>
+      <!-- Project 3 : GeoConfirmes -->
+      <div class="card project-card">
+        <div class="project-header">
+          <i class="fas fa-map-marked-alt project-icon"></i>
+          <div class="project-links">
+            <a href="https://x.com/Osintr3sting" title="Twitter / X" target="_blank" rel="noopener">
+              <i class="fab fa-x-twitter"></i>
+              <a href="https://x.com/Osintr3sting" title="View"><i class="fas fa-external-link-alt"></i></a>
+            </a>
+          </div>
+        </div>
+        <h3>GeoConfirmes</h3>
+        <p>Contributor to the GeoConfirmes open-source GeoINT project — geolocation and verification of images and videos from open sources, published on X (Twitter).</p>
+        <div class="tags">
+          <span class="tag">GeoINT</span>
+          <span class="tag">OSINT</span>
+          <span class="tag">Geolocation</span>
+          <span class="tag">Open Source</span>
+        </div>
+      </div>
+
+      <!-- Project 4 : CTF Writeups -->
+      <div class="card project-card">
+        <div class="project-header">
+          <i class="fas fa-flag project-icon"></i>
+          <div class="project-links">
+            <a href="https://github.com/l0uishp/ctf-writeups" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/l0uishp/ctf-writeups" title="View"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <h3>CTF Writeups</h3>
+        <p>Collection of detailed write-ups for CTF challenges. Documented methodology and tooling for each solved challenge.</p>
+        <div class="tags">
+          <span class="tag">Forensics</span>
+          <span class="tag">Reverse</span>
+          <span class="tag">Web</span>
+          <span class="tag">OSINT</span>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="py-16 px-6 max-w-4xl mx-auto">
-    <h3 class="text-2xl font-semibold mb-6">Compétences</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      <ul class="text-gray-400">
-        <li>• Pentesting</li>
-        <li>• Réseaux</li>
-        <li>• Linux</li>
-      </ul>
-      <ul class="text-gray-400">
-        <li>• Python</li>
-        <li>• Cryptographie</li>
-        <li>• Sécurité Web</li>
-      </ul>
+  <!-- CONTACT -->
+  <section id="contact" class="section fade-in-section">
+    <h2 class="section-title"><span class="title-num">06.</span> Contact</h2>
+    <p class="contact-intro">Open to work in cybersecurity.</p>
+
+    <div class="contact-wrapper">
+      <div class="contact-links">
+        <a class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>louis.ho-pe@proton.me</span>
+        </a>
+        <a href="https://www.linkedin.com/in/louis-ho-pe/" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-linkedin"></i>
+          <span>linkedin.com/in/louis-ho-pe/</span>
+        </a>
+        <a href="https://github.com/l0uishp" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+          <span>github.com/l0uishp</span>
+        </a>
+        <a href="https://tryhackme.com/p/l0uishp" class="contact-item" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-flag"></i>
+          <span>tryhackme.com/p/l0uishp</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6 bg-gray-800 text-center">
-    <h3 class="text-2xl font-semibold mb-6">Contact</h3>
-    <p class="text-gray-400">email@example.com</p>
-    <p class="text-gray-400">LinkedIn / GitHub</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center p-6 border-t border-gray-700 text-gray-500">
-    © 2026 Ton Nom
+  <footer>
+    <p><span class="glow-sm">&lt;NP/&gt;</span> — Designed &amp; built with passion · © 2026</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
